@@ -1,0 +1,147 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-warn: var(--warn);
+  --color-warn-foreground: var(--warn-foreground);
+  --color-info: var(--info);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: #1a1a1a;
+  --foreground: #ececec;
+
+  --card: #2d2d2d;
+  --card-foreground: #ececec;
+  --popover: #2d2d2d;
+  --popover-foreground: #ececec;
+
+  --primary: #00704a;
+  --primary-foreground: #ececec;
+
+  --secondary: #2d2d2d;
+  --secondary-foreground: #ececec;
+
+  --muted: #2d2d2d;
+  --muted-foreground: #9b9b9b;
+
+  --accent: #1e3932;
+  --accent-foreground: #ececec;
+
+  --destructive: #c0392b;
+  --destructive-foreground: #ececec;
+
+  --warn: #c08a2b;
+  --warn-foreground: #1a1a1a;
+
+  --info: #5a8aa8;
+
+  --border: #3d3d3d;
+  --input: #3d3d3d;
+  --ring: #00704a;
+
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ececec;
+  --sidebar-primary: #00704a;
+  --sidebar-primary-foreground: #ececec;
+  --sidebar-accent: #1e3932;
+  --sidebar-accent-foreground: #ececec;
+  --sidebar-border: #3d3d3d;
+  --sidebar-ring: #00704a;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ececec;
+  --card: #2d2d2d;
+  --card-foreground: #ececec;
+  --popover: #2d2d2d;
+  --popover-foreground: #ececec;
+  --primary: #00704a;
+  --primary-foreground: #ececec;
+  --secondary: #2d2d2d;
+  --secondary-foreground: #ececec;
+  --muted: #2d2d2d;
+  --muted-foreground: #9b9b9b;
+  --accent: #1e3932;
+  --accent-foreground: #ececec;
+  --destructive: #c0392b;
+  --destructive-foreground: #ececec;
+  --warn: #c08a2b;
+  --warn-foreground: #1a1a1a;
+  --info: #5a8aa8;
+  --border: #3d3d3d;
+  --input: #3d3d3d;
+  --ring: #00704a;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ececec;
+  --sidebar-primary: #00704a;
+  --sidebar-primary-foreground: #ececec;
+  --sidebar-accent: #1e3932;
+  --sidebar-accent-foreground: #ececec;
+  --sidebar-border: #3d3d3d;
+  --sidebar-ring: #00704a;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+/* Neutralize legacy terminal-style utility combinations.
+   Last-declared wins over Tailwind's same-specificity utilities. */
+.font-mono { font-family: var(--font-sans); letter-spacing: normal; }
+.font-mono.uppercase { text-transform: none; letter-spacing: normal; }
